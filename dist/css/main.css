@@ -261,3 +261,187 @@ textarea {
   }
 }
 
+/* Main Styles */
+body {
+  padding-top: 20px;
+}
+/* Logo Styles */
+@font-face {
+  font-family: 'Harlow Solid LET Plain:1.0';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Harlow Solid LET Plain1.0.woff') format('woff');
+}
+
+#logo-main {
+  color: rgb(255, 255, 255);
+  font-family:'Harlow Solid LET Plain:1.0';
+  font-weight: normal;
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-top: .3em;
+}
+/* Logo Styles End */
+
+/* Nav Styles */
+
+.nav {
+  margin-top: 25px;
+}
+
+.carousel-item {
+  max-height: 450px;
+}
+
+/* Content Styles */
+#jumbotron-home {
+  margin-top: 2.5%;
+  width: 95%;
+}
+
+/* Principle Cards */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #0085CA;
+}
+
+.principleCard:hover .overlay {
+  opacity: .9;
+}
+
+.overlayText {
+  color: white;
+  font-size: 15px;
+  text-shadow: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Solutions Drawer */
+#solutions-drawer {
+  text-shadow: 1px 2px #eeeeee;
+  max-width: 1500px;
+}
+
+#test {
+  min-height: 15rem;
+  background: -moz-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: right;
+}
+
+#generation {
+  min-height: 15rem;
+  text-align: right;
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: left;
+}
+
+#metering {
+  min-height: 15rem;
+  background: -moz-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: right;
+}
+
+#innovate {
+  min-height: 15rem;
+  text-align: right;
+  background: -moz-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* FF3.6-15 */
+  background: -webkit-linear-gradient(right, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to left, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/8000io_header.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: left;
+}
+
+body, html {
+  height: 100%;
+}
+
+.parallax {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Transition Styles */
+  transition: all .9s ease-in-out;
+  transition-delay: 350ms;
+}
+
+.parallax:hover {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.parallax-logo-1-1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.parallax-logo-4-3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 75%;
+}
+
+.parallax-logo-16-9 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.parallax-logo-25-6 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 23.9%;
+}
+
+.parallax-logo-23-6 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-top: 35%;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
