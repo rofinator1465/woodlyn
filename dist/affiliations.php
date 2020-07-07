@@ -42,19 +42,19 @@
     <div class="collapse nav-tabs navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="solutions.html">Solutions</a>
+          <a class="nav-link" href="solutions.php">Solutions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="suppliers.html">Suppliers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="affiliations.html">Affliations</a>
+          <a class="nav-link" href="suppliers.php">Suppliers</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="contact.html">Contact Us <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Affliations <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -67,9 +67,55 @@
 
   <!-- Main Content -->
 
-  <div class="container-fluid mx-1 p-2"></div>
-    <p>Woodlyn Sales</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur mollitia ipsum fugit magnam similique delectus quia consectetur beatae labore esse voluptatibus maiores temporibus placeat sint obcaecati architecto, porro nihil? Doloribus.</p>
+  <div class="container-fluid w-50 mx-auto p-2"></div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="4">
+    <tbody><tr>
+      <td>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tbody><tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>
+              <a rel="nofollow" href="http://www.emra-mi.org" target="_blank">EMRA of Michigan</a>
+            </b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Electrical Manufacturers Representatives Association</font></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="4">
+    <tbody><tr>
+      <td>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tbody><tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>
+              <a rel="nofollow" href="http://www.emra-mi.org" target="_blank">EMRA of Michigan</a>
+            </b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Electrical Manufacturers Representatives Association</font></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="4">
+    <tbody><tr>
+      <td>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+          <tbody><tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>
+              <a rel="nofollow" href="http://www.emra-mi.org" target="_blank">EMRA of Michigan</a>
+            </b></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Electrical Manufacturers Representatives Association</font></td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
   </div>
 
   <!--                       Footer                       -->
@@ -79,8 +125,8 @@
       <a class="mx-2" href="index.html">Home</a>
       <a class="mx-2" href="solutions.html">Solutions</a>
       <a class="mx-2" href="suppliers.html">Suppliers</a>
-      <a class="mx-2" href="affiliations.html">Affliations</a>
-      <a class="mx-2" href="contact.html">Contact Us <span class="sr-only">(current)</span></a>
+      <a class="mx-2" href="affiliations.html">Affliations <span class="sr-only">(current)</span></a>
+      <a class="mx-2" href="contact.html">Contact Us</a>
     </p>
     <hr />
     <p class="text-center text-muted">© Copyright 2020 Woodlyn Sales, Inc. All Rights Reserved. Other products, images, logos, and company names mentioned herein may be the trademarks of their respective owners.</p>

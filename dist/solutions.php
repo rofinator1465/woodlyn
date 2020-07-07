@@ -1,6 +1,20 @@
 <!doctype html>
 <html class="no-js" lang="">
 
+<?php
+$servername = "localhost";
+$username = "woodlyn";
+$password = "71woodlyn20";
+$dbname = "woodlynsalesweb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <head>
   <meta charset="utf-8">
   <title>Woodlyn Sales | Home</title>
@@ -42,19 +56,19 @@
     <div class="collapse nav-tabs navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="solutions.html">Solutions<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Solutions<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="suppliers.html">Suppliers</a>
+          <a class="nav-link" href="suppliers.php">Suppliers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="affiliations.html">Affliations</a>
+          <a class="nav-link" href="affiliations.php">Affliations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact Us</a>
+          <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -110,50 +124,28 @@
       </div>
       <div class="collapse mx-auto p-5" id="collapseTesting" style="width: 90%">
         <div class="card-deck row justify-content-around">
-          <!-- Write Script for Cards -->
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arbiter.jpg" alt="Card image cap">
-            <div class="overlay">
-              <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-            </div>
-          </div>
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <img class="card-img-top mx-auto my-auto" src="img/supplier-art/amsc.png" alt="Card image cap">
-            <div class="overlay">
-              <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-            </div>
-          </div>
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <img class="card-img-top mx-auto my-auto" src="img/supplier-art/aqua-tronics.jpg" alt="Card image cap">
-            <div class="overlay">
-              <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-            </div>
-          </div>      
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <a href="#">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/dilo.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-            </a>
-          </div>
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <a href="#">
-            <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arruti.png" alt="Card image cap">
-            <div class="overlay">
-              <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-            </div>
-            </a>
-          </div>
-          <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-            <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arteche.png" alt="Card image cap">
-            <div class="overlay">
-              <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
+          <!-- Populate Cards by Solution -->
+          <?php 
+          $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE test_sol = '1' ORDER BY name;";
+          $result = $conn->query($sql);
+          
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo '
+                <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 175px; min-height: 150px; max-height: 175px">
+                  <img class="card-img-top mx-auto my-auto" src="img/supplier-art/' . $row["logo_file"]. '" alt="' . $row["name"]. '">
+                  <div class="overlay">
+                    <a href="' . $row["url"]. '" target="_blank"><div class="overlayText"><h6>' . $row["name"]. '</h6>' . $row["subheading"]. '</div></a>
+                  </div>
+                </div>
+              ';}
+            } else {
+              echo "Error, please advise webadministrator.";
+            }
+          ?>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
     <!--  Generation Solutions -->
     <div class="card mx-auto w-100">
@@ -171,25 +163,25 @@
       <div class="collapse mx-auto p-5" id="collapseGeneration" style="width: 90%">
         <div class="container" style="max-width: 95%; justify-items: center">
           <div class="row justify-content-around">
-            <!-- Card Script Loop parameter = meter -->
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arbiter.jpg" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/amsc.png" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/aqua-tronics.jpg" alt="Card image cap">
-            </div>      
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/dilo.jpg" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arruti.png" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arteche.png" alt="Card image cap">
-            </div>
+              <!-- Populate Cards by Solution -->
+          <?php 
+          $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE gen_sol = '1' ORDER BY name;";
+          $result = $conn->query($sql);
+          
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo '
+                <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 175px; min-height: 150px; max-height: 175px">
+                  <img class="card-img-top mx-auto my-auto" src="img/supplier-art/' . $row["logo_file"]. '" alt="' . $row["name"]. '">
+                  <div class="overlay">
+                    <a href="' . $row["url"]. '" target="_blank"><div class="overlayText"><h6>' . $row["name"]. '</h6>' . $row["subheading"]. '</div></a>
+                  </div>
+                </div>
+              ';}
+            } else {
+              echo "Error, please advise webadministrator.";
+            }
+          ?>
           </div>
         </div>
       </div>
@@ -212,47 +204,25 @@
       <div class="collapse mx-auto p-5" id="collapseMetering" style="width: 90%">
         <div class="container" style="max-width: 95%; justify-items: center">
           <div class="card-deck row justify-content-around">
-            <!-- Write Script for Cards -->
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arbiter.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-            </div>
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/amsc.png" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-            </div>
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/aqua-tronics.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-            </div>      
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <a href="#">
-                <img class="card-img-top mx-auto my-auto" src="img/supplier-art/dilo.jpg" alt="Card image cap">
-                <div class="overlay">
-                  <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
+                        <!-- Populate Cards by Solution -->
+          <?php 
+          $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE metering_sol = '1' ORDER BY name;";
+          $result = $conn->query($sql);
+          
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo '
+                <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 175px; min-height: 150px; max-height: 175px">
+                  <img class="card-img-top mx-auto my-auto" src="img/supplier-art/' . $row["logo_file"]. '" alt="' . $row["name"]. '">
+                  <div class="overlay">
+                    <a href="' . $row["url"]. '" target="_blank"><div class="overlayText"><h6>' . $row["name"]. '</h6>' . $row["subheading"]. '</div></a>
+                  </div>
                 </div>
-              </a>
-            </div>
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <a href="#">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arruti.png" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-              </a>
-            </div>
-            <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arteche.png" alt="Card image cap">
-              <div class="overlay">
-                <div class="overlayText"><h6>Arruti Group</h6>Lorem ipsum dolor, sit amet</div>
-              </div>
-            </div>
+              ';}
+            } else {
+              echo "Error, please advise webadministrator.";
+            }
+          ?>
         </div>
       </div>
     </div>
@@ -274,26 +244,25 @@
       <div class="collapse mx-auto p-5" id="collapseInnovate" style="width: 90%">
         <div class="container" style="max-width: 95%; justify-items: center">
           <div class="row justify-content-around">
-            <!-- Card Script Loop parameter = meter -->
-            <!--  Placeholder Cards -->
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arbiter.jpg" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/amsc.png" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/aqua-tronics.jpg" alt="Card image cap">
-            </div>      
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/dilo.jpg" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arruti.png" alt="Card image cap">
-            </div>
-            <div class="card m-2 p-4" style="min-width: 150px; max-width: 200px; min-height: 150px; max-height: 200px">
-              <img class="card-img-top mx-auto my-auto" src="img/supplier-art/arteche.png" alt="Card image cap">
-            </div>
+          <!-- Populate Cards by Solution -->
+          <?php 
+          $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE innovate_sol = '1' ORDER BY name;";
+          $result = $conn->query($sql);
+          
+          if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+              echo '
+                <div class="card p-4 mx-auto m-sm-2 principleCard" style="min-width: 150px; max-width: 175px; min-height: 150px; max-height: 175px">
+                  <img class="card-img-top mx-auto my-auto" src="img/supplier-art/' . $row["logo_file"]. '" alt="' . $row["name"]. '">
+                  <div class="overlay">
+                    <a href="' . $row["url"]. '" target="_blank"><div class="overlayText"><h6>' . $row["name"]. '</h6>' . $row["subheading"]. '</div></a>
+                  </div>
+                </div>
+              ';}
+            } else {
+              echo "Error, please advise webadministrator.";
+            }
+          ?>
           </div>
         </div>
       </div>

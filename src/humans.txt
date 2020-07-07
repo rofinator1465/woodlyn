@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Rodney Perry -- Design/Development
 
 # THANKS
 
-    <name>
+    Tom Smith - Woodlyn Sales
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
+    CSS3, HTML5, PHP
     Apache Server Configs, jQuery, Modernizr, Normalize.css
