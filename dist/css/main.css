@@ -314,9 +314,9 @@ footer {
 #jumbotron-home {
   padding: 2.5rem;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/bg_ptti.jpg"); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/bg_ptti.jpg"); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/bg_ptti.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%, rgba(255,255,255,0.4) 85%, rgba(255,255,255,0) 100%), url("../img/supplier-art/bg/bg_ptti.jpg"); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/bg/bg_ptti.jpg"); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top, rgba(255,255,255,1) 10%, rgba(255,255,255,0.7) 54%,rgba(255,255,255,0.4) 85%,rgba(255,255,255,0) 100%), url("../img/supplier-art/bg/bg_ptti.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

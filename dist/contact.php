@@ -64,7 +64,7 @@
 
   <!-- Main Content -->
 
-  <div class="container-fluid mx-1 p-4 bg-img" style="background-image: url('img/supplier-art/bg_powercon.jpg')">
+  <div class="container-fluid mx-1 p-4 bg-img" style="background-image: url('img/supplier-art/bg/bg_powercon.jpg')">
   <form action="scripts/submit_request.php" method="post" class="container w-75 p-4 text-center needs-validation" style="background-color: #eeeeee" novalidate>
     <h1>Contact Us</h1>
     <div class="form-row">
