@@ -92,7 +92,7 @@ if ($conn->connect_error) {
                 <div class="card container-fluid" style="min-height: 200px; background-color: white;">
                   <div class="d-sm-flex align-items-center mx-auto my-auto p-5" style="min-height: 100px; max-width: 1000px;">
                   <img class="mx-auto" style="max-width: 90%; max-height: 100px;" src="img/affiliation-art/'. $row["logo_file"]. '" />
-                    <div class="container" style="width: 70%; min-width: 150px;">
+                    <div class="container p-3" style="width: 70%; min-width: 150px;">
                       <h4>' . $row["name"]. '</h4>     
                       <div>' . $row["description"]. '</div>
                       ' . $row["url"].'

@@ -78,7 +78,7 @@ if ($conn->connect_error) {
   <!-- End Nav -->
 
   <!-- Main Content -->
-  <div id="quickSelect" class="container list-group align-items-center" style="height: 100%; background-color: #888888; margin-top: -20px; padding-top: 3rem; color: rgba(200, 200, 200, 0.7); z-index: 1;">
+  <div id="quickSelect" class="d-none d-lg-block container list-group align-items-center" style="height: 100%; background-color: #888888; margin-top: -20px; padding-top: 3rem; color: rgba(200, 200, 200, 0.7); z-index: 1;">
     <?php 
       $i = 20;
       $sql = "SELECT name, logo_file FROM suppliers ORDER BY name;";
@@ -107,21 +107,21 @@ if ($conn->connect_error) {
   <!-- End Jumbotron -->
     <!-- Parallax -->
     <?php 
-      $sql = "SELECT id, name, product_line, subheading, url, logo_file, bg_file FROM suppliers ORDER BY name;";
+      $sql = "SELECT id, name, product_line, subheading, url, logo_file, bg_file, bg_color FROM suppliers ORDER BY name;";
       $result = $conn->query($sql);
       
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
           echo '
           <span class="anchor" id="' . $row["name"].'"></span>
-            <div class="parallax" style=" background-image: url(\'img/supplier-art/bg/' . $row["bg_file"].'\');">
+            <div class="parallax" style=" background-image: url(\'img/supplier-art/bg/' . $row["bg_file"].'\'); background-color: ' . $row["bg_color"].'">
               <a href="' . $row["url"].'" class="supp-link" target="_blank">
                 <div class="card container-fluid" style="min-height: 200px; background-color: white;">
                   <div class="d-sm-flex align-items-center mx-auto my-auto p-5" style="min-height: 100px; max-width: 1000px;">
-                    <div class="container mx-auto pb-3" style="max-width: 20%; min-width: 200px;">
+                    <div class="container mx-auto pb-3" style="width: 20%; min-width: 200px;">
                       <img class="mx-auto" style="max-width: 90%; max-height: 100px;" src="img/supplier-art/'. $row["logo_file"]. '" />
                     </div>
-                    <div class="container" style="width: 70%; min-width: 150px;">
+                    <div class="container mx-auto" style="width: 70%; min-width: 150px;">
                       <h4>' . $row["name"]. '</h4><h6>' . $row["subheading"]. ' </h6>     
                       <div>' . $row["product_line"]. '</div>
                       ' . $row["url"].'

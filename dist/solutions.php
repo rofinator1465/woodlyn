@@ -134,7 +134,7 @@ if ($conn->connect_error) {
       </div>
       <div class="collapse mx-auto p-5" id="collapseGeneration" style="width: 90%">
         <div class="container" style="max-width: 95%; justify-items: center">
-          <div class="row justify-content-around">
+          <div class="card-deck row justify-content-around">
               <!-- Populate Cards by Solution -->
           <?php 
           $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE gen_sol = '1' ORDER BY name;";
@@ -215,7 +215,7 @@ if ($conn->connect_error) {
       </div>
       <div class="collapse mx-auto p-5" id="collapseInnovate" style="width: 90%">
         <div class="container" style="max-width: 95%; justify-items: center">
-          <div class="row justify-content-around">
+          <div class="card-deck row justify-content-around">
           <!-- Populate Cards by Solution -->
           <?php 
           $sql = "SELECT id, name, subheading, url, logo_file FROM suppliers WHERE innovate_sol = '1' ORDER BY name;";

@@ -141,7 +141,7 @@ if ($conn->connect_error) {
             </div>
           ';}
         } else {
-          echo "Error, please advise webadministrator.";
+          echo "Error, please advise webadministrator.". $mysqli -> connect_error;
         }
         $conn->close();
       ?>
